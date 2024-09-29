@@ -12,14 +12,14 @@ class Table {
 				name: "wordUsage",
 				title: "Word usage",
 				alignment: "left",
-				minLen: 40,
+				minLen: 60,
 				maxLen: 60,
 			},
 			{
 				name: "wordDescription",
 				title: "Word description",
 				alignment: "left",
-				minLen: 50,
+				minLen: 70,
 				maxLen: 70,
 			},
 			// {
