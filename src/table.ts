@@ -27,6 +27,7 @@ class Table {
 			// 	title: "Learn more",
 			// },
 		],
+		rowSeparator: true,
 	});
 
 	constructor(data: IWord[]) {

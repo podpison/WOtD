@@ -3,8 +3,11 @@ declare global {
 		word: string;
 		wordUsage: string;
 		wordDescription: string;
-		// id: string;
 		// learnMore: string;
+	}
+	interface IWordFull extends IWord {
+		id: string;
+		created_at: string;
 	}
 
 	interface TableItem {

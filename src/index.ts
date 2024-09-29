@@ -19,6 +19,9 @@ if (existanceCode !== 200) {
 	}
 }
 
-const vocabularyTable = new Table([vocabularyWOtD.word]);
+//TODO: move offset login to a seprate file
+const words = await wordsAPI.getAll();
+
+const vocabularyTable = new Table(words);
 
 vocabularyTable.print();

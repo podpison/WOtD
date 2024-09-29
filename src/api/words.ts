@@ -1,15 +1,24 @@
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
-	process.env.SUPABASE_URL || "",
-	process.env.SUPABASE_KEY || "",
+	process.env.API_URL || "",
+	process.env.API_KEY || "",
 );
 
 class WordsAPI {
-	public async getAll(): Promise<IWord[] | null> {
+	private normalizeItems(data: IWordFull[] = []) {
+		const result: IWord[] = data.map((i) => ({
+			word: i.word,
+			wordDescription: i.wordDescription,
+			wordUsage: i.wordUsage,
+		}));
+
+		return result;
+	}
+	public async getAll(): Promise<IWord[]> {
 		const { data } = await supabase.from("words").select();
 
-		return data;
+		return this.normalizeItems(data as IWordFull[]);
 	}
 	public async doesExist(word: IWord): Promise<number> {
 		const { status } = await supabase
