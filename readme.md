@@ -1,7 +1,7 @@
 <h1>Word of the Day</h1>
 <strong>The data is being collected from Vocabulary</strong>
 
-<p>Minimum width of the konsole is 107 pixels</p>
+<p>Minimum width of the konsole is 151 pixels</p>
 
 <h2>In order to run the app, do the following:</h2>
 <ol>
