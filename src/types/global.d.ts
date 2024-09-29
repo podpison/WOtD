@@ -3,6 +3,7 @@ declare global {
 		word: string;
 		wordUsage: string;
 		wordDescription: string;
+		// id: string;
 		// learnMore: string;
 	}
 
