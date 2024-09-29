@@ -1,24 +1,26 @@
 import { Table as CTPTable } from "console-table-printer";
 
 class Table {
-	private _table: CTPTable = new CTPTable({
+	private readonly _table: CTPTable = new CTPTable({
 		columns: [
 			{
 				name: "word",
 				title: "Word",
-				alignment: "center",
+				alignment: "left",
 			},
 			{
 				name: "wordUsage",
 				title: "Word usage",
-				alignment: "center",
+				alignment: "left",
 				minLen: 40,
+				maxLen: 60,
 			},
 			{
 				name: "wordDescription",
 				title: "Word description",
-				alignment: "center",
+				alignment: "left",
 				minLen: 50,
+				maxLen: 70,
 			},
 			// {
 			// 	name: "learnMore",
@@ -28,19 +30,9 @@ class Table {
 	});
 
 	constructor(data: IWord[]) {
-		this._table.addRows(this.normalizeSpaces(data));
+		this._table.addRows(data);
 	}
-	private normalizeSpaces(data: IWord[]) {
-		//removes unnessesary spaces (e.g. "   text text2")
 
-		const normalizedData: IWord[] = data.map((d) => ({
-			...d,
-			// wordDescription: d.wordDescription.replace(/\s+/g, " ").trim(),
-			// wordUsage: d.wordUsage.replace(/\s+/g, " ").trim(),
-		}));
-
-    return normalizedData;
-	}
 	private divideWords(text: string) {
 		//splits word into multiple words + capitalize the first letter (e.g. wordDescription to Word description)
 

@@ -14,10 +14,10 @@ class WOtD {
 	private normalizeText(text?: string | null) {
 		if (!text) return "";
 
-		// const withoutBreaks = text.replaceAll("\n", "");
-		// const trimmed = withoutBreaks.trim();
+		const withoutBreaks = text.replaceAll("\n", "");
+		const trimmed = withoutBreaks.trim();
 
-		const normalizedText = text; //the constant should be equal to the last change applied
+		const normalizedText = trimmed; //the constant should be equal to the last change applied
 
 		return normalizedText;
 	}
