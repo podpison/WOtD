@@ -1,31 +1,21 @@
 import { Table as CTPTable } from "console-table-printer";
+import tableConfig from "./../tableconfig.json";
 
 class Table {
 	private readonly _table: CTPTable = new CTPTable({
 		columns: [
 			{
 				name: "word",
-				title: "Word",
-				alignment: "left",
+				...tableConfig.columns.word,
 			},
 			{
 				name: "wordUsage",
-				title: "Word usage",
-				alignment: "left",
-				minLen: 60,
-				maxLen: 60,
+				...tableConfig.columns.wordUsage,
 			},
 			{
 				name: "wordDescription",
-				title: "Word description",
-				alignment: "left",
-				minLen: 70,
-				maxLen: 70,
+				...tableConfig.columns.wordDescription,
 			},
-			// {
-			// 	name: "learnMore",
-			// 	title: "Learn more",
-			// },
 		],
 		rowSeparator: true,
 	});

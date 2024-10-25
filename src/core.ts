@@ -1,5 +1,5 @@
 import { JSDOM } from "jsdom";
-import {sourceQueries} from "./middleware";
+import { sourceQueries } from "./middleware";
 
 class WOtD {
 	website = "";
@@ -14,10 +14,12 @@ class WOtD {
 	private normalizeText(text?: string | null) {
 		if (!text) return "";
 
-		const withoutBreaks = text.replaceAll("\n", "");
-		const trimmed = withoutBreaks.trim();
-
-		const normalizedText = trimmed; //the constant should be equal to the last change applied
+		//callbacks that should modify a given text
+		const enchanters: ((text: string) => string)[] = [
+			(text) => text.replaceAll("\n", ""),
+			(text) => text.trim(),
+		];
+		const normalizedText = enchanters.reduce((acc, curr) => curr(acc), text);
 
 		return normalizedText;
 	}
@@ -25,7 +27,9 @@ class WOtD {
 		if (this.document == null) return "";
 
 		const node = this.document.querySelector(query);
-		const result = isLink ? node?.getAttribute("href") : this.normalizeText(node?.textContent);
+		const result = isLink
+			? node?.getAttribute("href")
+			: this.normalizeText(node?.textContent);
 
 		return result || "";
 	}

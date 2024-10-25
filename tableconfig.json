@@ -1,0 +1,22 @@
+{
+  "columns": {
+    "word": {
+      "title": "Word",
+      "maxLen": 15,
+      "minLen": 15,
+      "alignment": "left"
+    },
+    "wordUsage": {
+      "title": "Word usage",
+      "maxLen": 40,
+      "minLen": 40,
+      "alignment": "left"
+    },
+    "wordDescription": {
+      "title": "Word description",
+      "maxLen": 50,
+      "minLen": 50,
+      "alignment": "left"
+    }
+  }
+}

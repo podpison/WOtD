@@ -1,7 +1,17 @@
-<h1>Word of the Day</h1>
-<strong>The data is being collected from Vocabulary</strong>
+<div>
+  <h1>Word of the Day</h1>
+  <strong>The data is being collected from Vocabulary</strong>
+</div>
 
-<p>Minimum width of the konsole should be more than 150px</p>
+<div>
+  <p>
+    <span>By default, the minimum width of a console should be more than 120px
+    </span>
+    <span>
+    You may change it, as well as other table params, in the <code>tableconfog.json</code> file
+    </span>
+  </p>
+</div>
 
 <h2>In order to run the app, do the following:</h2>
 <ol>
