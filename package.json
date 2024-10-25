@@ -10,7 +10,6 @@
     "start": "clear && npx tsx src/index.ts"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.45.4",
     "console-table-printer": "^2.12.1",
     "dotenv": "^16.4.5",
     "jsdom": "^24.1.1"

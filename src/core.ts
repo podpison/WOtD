@@ -8,7 +8,6 @@ class WOtD {
 		word: "",
 		wordUsage: "",
 		wordDescription: "",
-		// learnMore: "",
 	};
 
 	private normalizeText(text?: string | null) {
@@ -47,7 +46,6 @@ class WOtD {
 			word: this.queryNode(sourceQueries.word),
 			wordUsage: this.queryNode(sourceQueries.wordUsage),
 			wordDescription: this.queryNode(sourceQueries.wordDescription),
-			// learnMore: this.queryNode(".lk-wod-more", true),
 		};
 	}
 

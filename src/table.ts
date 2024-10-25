@@ -21,7 +21,7 @@ class Table {
 	});
 
 	constructor(data: IWord) {
-		this._table.addRows(data);
+		this._table.addRows([data]);
 	}
 
 	print() {
